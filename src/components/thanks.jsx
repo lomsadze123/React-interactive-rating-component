@@ -2,11 +2,11 @@ import { styled } from 'styled-components';
 import Payment from '../assets/payment.svg'
 import MadeMake from './makeMade';
 
-const Thanks = () => {
+const Thanks = ( { score } ) => {
     return (
         <Main>
             <img src={Payment} alt="Payment" />
-            <P>You selected 4 out of 5</P>
+            <P>You selected {score} out of 5</P>
             <MadeMake title="Thank you!" review="We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!" />
         </Main>
     );
@@ -14,7 +14,7 @@ const Thanks = () => {
 
 export default Thanks;
 
-const Main = styled.main`
+const Main = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +26,16 @@ const Main = styled.main`
         padding: 0;
     }
     p {
-        font-size: 1.55rem;
+        font-size: 1.4rem;
+    }
+
+    @media (min-width: 768px) {
+        img {
+            width: 16.2rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
     }
 `
 
